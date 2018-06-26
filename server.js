@@ -3,6 +3,8 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const pokemon = require("pokemontcgsdk");
 
+const pkmData = require("./routes/api/pkmData");
+
 const app = express();
 
 // Body parser middleware
@@ -18,6 +20,10 @@ mongoose
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.log(err));
 
+// Use Routes
+
+app.use("/api/pkmData", pkmData);
+
 // heroku or localhost
 const port = process.env.PORT || 5000;
 
@@ -31,6 +37,6 @@ pokemon.card.where({ supertype: "pokemon", subtype: "mega" }).then(cards => {
   console.log(cards[0].name); // "M Sceptile-EX"
 });
 
-pokemon.card.all({ name: "blastoise", pageSize: 1 }).on("data", card => {
-  console.log(card.name);
-});
+// pokemon.card.all({ name: "blastoise", pageSize: 1 }).on("data", card => {
+//   console.log(card.name);
+// });

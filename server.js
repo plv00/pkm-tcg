@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const pokemon = require("pokemontcgsdk");
 
 const pkmData = require("./routes/api/pkmData");
+const users = require("./routes/api/users");
 
 const app = express();
 
@@ -23,7 +24,7 @@ mongoose
 // Use Routes
 
 app.use("/api/pkmData", pkmData);
-
+app.use("/api/users", users);
 // heroku or localhost
 const port = process.env.PORT || 5000;
 
@@ -33,9 +34,9 @@ pokemon.card.find("base1-4").then(result => {
   console.log(result.card.name); // "Charizard"
 });
 
-pokemon.card.where({ supertype: "pokemon", subtype: "mega" }).then(cards => {
-  console.log(cards[0].name); // "M Sceptile-EX"
-});
+// pokemon.card.where({ supertype: "pokemon", subtype: "mega" }).then(cards => {
+//   console.log(cards[0].name); // "M Sceptile-EX"
+// });
 
 // pokemon.card.all({ name: "blastoise", pageSize: 1 }).on("data", card => {
 //   console.log(card.name);

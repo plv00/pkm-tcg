@@ -7,6 +7,7 @@ import store from "./store";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import Landing from "./components/layout/Landing";
+import Register from "./components/auth/Register";
 
 import "./App.css";
 
@@ -18,6 +19,9 @@ class App extends Component {
           <div className="App">
             <Navbar />
             <Route exact path="/" component={Landing} />
+            <div className="container">
+              <Route exacth path="/register" component={Register} />
+            </div>
             <Footer />
           </div>
         </Router>

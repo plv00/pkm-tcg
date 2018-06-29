@@ -4,11 +4,19 @@
   "description": "Pokemon trading card social network",
   "main": "server.js",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
+    "concurrently": "^3.6.0",
     "express": "^4.16.3",
+    "gravatar": "^1.6.0",
+    "jsonwebtoken": "^8.3.0",
+    "lodash": "^4.17.10",
     "mongoose": "^5.1.6",
     "nodemon": "^1.17.5",
-    "pokemontcgsdk": "^1.1.0"
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "pokemontcgsdk": "^1.1.0",
+    "validator": "^10.4.0"
   },
   "devDependencies": {},
   "scripts": {
@@ -22,7 +30,11 @@
     "type": "git",
     "url": "git+https://github.com/plv00/pkm-tcg-network.git"
   },
-  "keywords": ["pokemon", "trading", "card"],
+  "keywords": [
+    "pokemon",
+    "trading",
+    "card"
+  ],
   "author": "Peter Vue",
   "license": "ISC",
   "bugs": {

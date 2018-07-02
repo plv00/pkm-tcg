@@ -7,6 +7,7 @@ const pokemon = require("pokemontcgsdk");
 
 const pkmData = require("./routes/api/pkmData");
 const users = require("./routes/api/users");
+const profile = require("./routes/api/profile");
 
 const app = express();
 
@@ -33,6 +34,7 @@ require("./config/passport")(passport);
 
 app.use("/api/pkmData", pkmData);
 app.use("/api/users", users);
+app.use("/api/profile", profile);
 // heroku or localhost
 const port = process.env.PORT || 5000;
 
